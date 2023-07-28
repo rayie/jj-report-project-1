@@ -25,3 +25,13 @@ node auth_setup.js
 
 This should open a browser asking you to flow through the grants. Flow through it.
 If you successfully do that, a token.json file should get created in your directory. Verify that it does.
+
+THen try:
+
+```
+node app.js
+```
+
+You should see the data from the sample spreadsheet I shared with you.
+
+Examine the code in the list_records function.
