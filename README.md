@@ -15,6 +15,8 @@ Then install the node.js libraries as defined in package.json
 npm install
 ```
 
+Create the client.json file as instructed in the email I sent you.
+
 Do a one time authorization action to allow this app to read and write to Googlesheets that your google account has access to by:
 
 ```
