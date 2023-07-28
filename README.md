@@ -35,3 +35,10 @@ node app.js
 You should see the data from the sample spreadsheet I shared with you.
 
 Examine the code in the list_records function.
+
+Here's some info on using the API that Google provides to read and write to googlesheets:
+
+https://developers.google.com/sheets/api/guides/values#node.js
+
+The auth steps above took care of authentication for you already. In `list_records` function, you 'll see that it makes use of the google.sheets api handler.  
+That's what's making the call to "read" the spreadsheet contents.

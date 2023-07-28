@@ -6,11 +6,14 @@ const {google} = require('googleapis');
 const { authorize } = require("./authlib.js");
 /**
  * Prints the names and majors of students in a sample spreadsheet:
- * @see https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
  * @param {google.auth.OAuth2} auth The authenticated Google OAuth client.
  */
 async function list_records(auth) {
+  //this authenticates the sheets api client
   const sheets = google.sheets({version: 'v4', auth});
+
+
+  //this makes the api call to read data from the sheet. 
   const res = await sheets.spreadsheets.values.get({
     spreadsheetId: '16mjKKM7yKNEXrBTJo1rzrW716Roz-gY3mh7CfvwYnLg',
     range: 'Orders Data!A2:G',
