@@ -1,0 +1,29 @@
+# Logs
+logs
+*.log
+*.swp
+*.*.swp
+
+
+
+# Dependency directories
+node_modules/
+
+# Build/build artifacts
+build/
+dist/
+
+# Environment variables
+.env
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+package-lock.json
+
+token.json
+client.json
