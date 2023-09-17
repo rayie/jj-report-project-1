@@ -10,4 +10,4 @@ Compare your answers to the data provided in the Summaries tab.
 
 3.  Which customers placed at least 20 orders?
 
-4.  Which customer provied the highest average food rating overall?
+4.  Which customer gave the highest average food rating overall?

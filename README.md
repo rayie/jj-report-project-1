@@ -111,3 +111,5 @@ https://developers.google.com/sheets/api/guides/values#node.js
 The auth steps above took care of authentication for you already. In `list_records` function, you 'll see that it makes use of the google.sheets api handler.
 
 That's what's making the call to "read" the spreadsheet contents.
+
+You can try [Excersize 1](exercise1.md)
