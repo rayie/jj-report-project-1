@@ -15,7 +15,12 @@ Then install the node.js libraries as defined in package.json
 npm install
 ```
 
-Create the client.json file as instructed in the email I sent you.
+Now go back to the email I sent you.
+Create the client.json file as instructed in the email.
+
+---
+
+Once you have the client file created in your local repo, continue on:
 
 Do a one time authorization action to allow this app to read and write to Googlesheets that your google account has access to by:
 
