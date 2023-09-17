@@ -3,21 +3,29 @@ const path = require("path");
 const process = require("process");
 const { authenticate } = require("@google-cloud/local-auth");
 const { google } = require("googleapis");
+
+//this imports the authorize function from authlib.js, which handle the check for an existing token file (or the auth flow if it hasn't been done yet)
+//It returns an authenticated client object that can be used to call Google APIs. In this example the specific Google API you're working with
+//is the Google Sheets API (but there are others, like a GMail API, Google Drive API, etc)
+
 const { authorize } = require("./authlib.js");
 
 /**
  * Prints the names and majors of students in a sample spreadsheet:
  * @param {google.auth.OAuth2} auth The authenticated Google OAuth client.
  */
-async function list_records(auth) {
-  //this authenticates the sheets api client
-  const sheets = google.sheets({ version: "v4", auth });
+async function list_records(authClient) {
+  //this instantiates the sheets client, and provides it with the authClient object, which it needs to access the sample Google Sheet (Orders) you have access to.
+  const sheets = google.sheets({ version: "v4", auth: authClient });
 
   //this makes the api call to read data from the sheet.
   const res = await sheets.spreadsheets.values.get({
     spreadsheetId: "16mjKKM7yKNEXrBTJo1rzrW716Roz-gY3mh7CfvwYnLg",
     range: "Orders Data!A2:G", //notice here that we are only asking for columns A to G, starting at row 2 (row 1 is the header)
   });
+
+  //res now is a object that contains the data from the sheet. We can access it using res.data.values
+
   const rows = res.data.values;
   if (!rows || rows.length === 0) {
     console.log("No data found.");
